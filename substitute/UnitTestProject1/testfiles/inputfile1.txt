@@ -1,0 +1,2 @@
+﻿The amount of car is %amount%. The loan amount can be granted is %loan%.
+The lease of the car will be %lease%. The rate of interest for loan will be %ROI% for %month%.

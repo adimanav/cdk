@@ -1,0 +1,2 @@
+The amount of car is 500000. The loan amount can be granted is 100000.
+The lease of the car will be 200000. The rate of interest for loan will be 10 for 12.

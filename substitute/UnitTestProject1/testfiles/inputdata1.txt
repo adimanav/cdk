@@ -1,0 +1,5 @@
+﻿amount=500000
+loan=100000
+lease=200000
+ROI=10
+Month=12

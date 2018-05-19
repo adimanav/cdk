@@ -9,7 +9,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestMethod1()
         {
-            CarPriceCalculator.CarPriceCalculator.Process();
+            CarPriceCalculator.CarPriceCalculator.Process().Wait();
         }
     }
 }

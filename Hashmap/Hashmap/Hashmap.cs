@@ -9,12 +9,20 @@ namespace Hashmap
     public class Hashmap<Tkey, Tvalue>
     {
         private LinkedList<Tuple<Tkey, Tvalue>>[] container;
-        private int capacity;
+        private int capacity = 1000;
+
+        private int count = 0;
+        public int Count
+        {
+            get
+            {
+                return count;
+            }
+        }
 
         public Hashmap()
         {
-            this.container = new LinkedList<Tuple<Tkey, Tvalue>>[10000];
-            this.capacity = 10000;
+            this.container = new LinkedList<Tuple<Tkey, Tvalue>>[this.capacity];
         }
 
         public Hashmap(int capacity)
@@ -25,7 +33,7 @@ namespace Hashmap
 
         private int GetHash(Tkey key)
         {
-            return key.GetHashCode() % capacity;
+            return Math.Abs(key.GetHashCode() % capacity);
         }
 
         public void Add(Tkey key, Tvalue value)
@@ -48,6 +56,7 @@ namespace Hashmap
             }
 
             container[hash].AddLast(new Tuple<Tkey, Tvalue>(key, value));
+            this.count++;
         }
 
         public void Remove(Tkey key)
@@ -64,6 +73,7 @@ namespace Hashmap
                 if (p.Value.Item1.Equals(key))
                 {
                     container[hash].Remove(p);
+                    this.count--;
                     found = true;
                     break;
                 }
@@ -72,6 +82,7 @@ namespace Hashmap
 
             if (!found)
                 throw new ApplicationException("Key not found.");
+
         }
 
         public Tvalue Get(Tkey key)

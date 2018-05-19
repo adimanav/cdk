@@ -1,0 +1,36 @@
+version: '3.4'
+
+services:
+  webapivehicle:
+    image: ${DOCKER_REGISTRY}webapivehicle
+    build:
+      context: .
+      dockerfile: WebApiVehicle/Dockerfile
+
+  webapitaxes:
+    image: ${DOCKER_REGISTRY}webapitaxes
+    build:
+      context: .
+      dockerfile: WebApiTaxes/Dockerfile
+
+
+  webapidiscounts:
+    image: ${DOCKER_REGISTRY}webapidiscounts
+    build:
+      context: .
+      dockerfile: WebApiDiscounts/Dockerfile
+
+
+  webapicredit:
+    image: ${DOCKER_REGISTRY}webapicredit
+    build:
+      context: .
+      dockerfile: WebApiCredit/Dockerfile
+
+
+  webapisaveprice:
+    image: ${DOCKER_REGISTRY}webapisaveprice
+    build:
+      context: .
+      dockerfile: WebApiSavePrice/Dockerfile
+
